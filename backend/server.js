@@ -1,36 +1,44 @@
+require("dotenv").config();
+
 const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
-const bodyParser = require("body-parser");
-const path = require('path');
 
 const app = express();
-// serve static files (CSS, JS, images, pdfs) from the project root
-app.use(express.static(__dirname));
 
-app.use(cors());
-app.use(bodyParser.json());
+app.use(cors({
+  origin: [
+    "https://parthvaland2005.github.io"
+  ],
+  methods: ["POST", "GET"],
+  credentials: true
+}));
+app.use(express.json());
 
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'home.html'));
+// Test route
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
 });
-
 app.post("/send", async (req, res) => {
+  console.log("SEND ROUTE HIT");
+  console.log("Body:", req.body);
+
   try {
     const { name, email, message } = req.body;
 
     let transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-  user: "parthvaland0509@gmail.com",
-  pass: "adldfsxussfrpvxw"
-}
-    });
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false,
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
+  }
+});
 
     let mailOptions = {
-      from: `"Portfolio Contact" <parthvaland0509@gmail.com>`,
-      to: "parthvaland0509@gmail.com",
+      from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_USER,
       subject: `New Message from ${name}`,
       text: `
 Name: ${name}
@@ -41,15 +49,16 @@ Message: ${message}
 
     await transporter.sendMail(mailOptions);
 
-    console.log("Email Sent Successfully ");
-    res.json({ success: true, message: "Message Sent Successfully!" });
+    console.log("Email sent successfully");
+    res.json({ success: true });
 
   } catch (error) {
-    console.error("Email Error ", error);
-    res.status(500).json({ success: false, message: "Something went wrong!" });
+    console.error("EMAIL ERROR:", error);
+    res.status(500).json({ success: false });
   }
 });
-const PORT = process.env.PORT || 5501;
+
+const PORT = process.env.PORT || 5502;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
