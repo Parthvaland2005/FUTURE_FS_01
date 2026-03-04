@@ -26,13 +26,13 @@ document.getElementById("contactForm").addEventListener("submit", async function
     };
 
     try {
-        const response = await fetch("https://portfolio-backend-production.up.railway.app/send", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(formData)
-        });
+        const response = await fetch("https://portfolio-backend-r8c5.onrender.com/send", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formData)
+});
 
         const data = await response.json();
 
@@ -44,8 +44,9 @@ document.getElementById("contactForm").addEventListener("submit", async function
         }
 
     } catch (error) {
-        alert(" Server Error. Try again later.");
-    }
+    console.error(error);
+    alert("Server Error. Try again later.");
+}
 });
 
 const themeToggle = document.getElementById("theme-toggle");
@@ -88,5 +89,5 @@ ScrollReveal().reveal('.section', {
 window.addEventListener("load", function(){
     document.getElementById("loader").style.display="none";
 });
-document.getElementById("success").innerText = 
-"Message Sent Successfully!";
+
+
