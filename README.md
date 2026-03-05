@@ -1,20 +1,27 @@
-# Personal Professional Portfolio Website
+# 🌐 Parth Valand Portfolio
 
-## 🚀 Tech Stack
-Frontend: HTML, CSS, JavaScript  
-Backend: Node.js  
-Deployment: Railway  
+This is my personal portfolio website built using **HTML, CSS, and JavaScript**.
 
-## ✨ Features
-- Interactive portfolio sections
-- Contact form with email notification
-- Dark / Light mode toggle
-- Smooth animations
-- Loading spinner
-- Live deployed backend
+## 🚀 Features
+- Responsive portfolio design
+- About me section
+- Skills section
+- Projects showcase
+- Contact form using EmailJS
+- Resume download option
 
-## 🌐 Live Demo
-(Add your live link here)
+## 🛠 Tech Stack
+- HTML5
+- CSS3
+- JavaScript
+- EmailJS
 
-## 📂 GitHub Repository
-https://github.com/Parthvaland2005/FUTURE_FS_01
+## 📸 Preview
+![Portfolio Screenshot](screenshot.png)
+
+## 🔗 Live Website
+https://parthvaland2005.github.io/FUTURE_FS_01
+
+
+
+⭐ If you like this project, feel free to give it a star on GitHub!
