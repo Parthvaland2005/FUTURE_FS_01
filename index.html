@@ -231,7 +231,27 @@
    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
    <script src="https://unpkg.com/scrollreveal"></script>
    <script src="ph.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
+<script>
+(function(){
+emailjs.init("hhEa9uBrETMRJVNlm");
+})();
+
+document.getElementById("contactForm").addEventListener("submit", function(event){
+event.preventDefault();
+
+emailjs.sendForm(
+'service_rcsf3i8',
+'template_udxcrov',
+this
+).then(function(){
+alert("Message Sent Successfully!");
+}, function(error){
+alert("Failed to send message");
+});
+});
+</script>
 
 </body>
 </html>

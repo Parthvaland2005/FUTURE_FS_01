@@ -1,26 +1,20 @@
-# FUTURE_FS_01 - Personal Professional Portfolio Website
+# Personal Professional Portfolio Website
 
-## 🚀 Overview
-This is a fully responsive personal portfolio website built to showcase my skills, projects, and professional profile.
-
-## 🛠 Tech Stack
-- HTML
-- CSS
-- JavaScript
-- Node.js
-- Railway (Deployment)
+## 🚀 Tech Stack
+Frontend: HTML, CSS, JavaScript  
+Backend: Node.js  
+Deployment: Railway  
 
 ## ✨ Features
-- Interactive Resume Section
-- Projects Showcase
-- Contact Form with Email Notification
-- Dark / Light Mode Toggle
-- Smooth Animations (ScrollReveal)
-- Loading Spinner
-- Fully Responsive Design
+- Interactive portfolio sections
+- Contact form with email notification
+- Dark / Light mode toggle
+- Smooth animations
+- Loading spinner
+- Live deployed backend
 
-## 📩 Backend Functionality
-The contact form is connected to a Node.js backend and sends email notifications using Nodemailer.
+## 🌐 Live Demo
+(Add your live link here)
 
-## 👨‍💻 Author
-**Parth Valand**
+## 📂 GitHub Repository
+https://github.com/Parthvaland2005/FUTURE_FS_01
