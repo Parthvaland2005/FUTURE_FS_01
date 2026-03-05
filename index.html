@@ -6,7 +6,9 @@
     <meta name="description" content="Parth Valand - Python Developer Portfolio showcasing projects, skills and contact details.">
     <meta name="keywords" content="Parth Valand, Python Developer, Web Developer, Portfolio, Vadodara Developer">
     <meta name="author" content="Parth Valand">
+    <meta name="robots" content="index, follow">
     <title>Parth Valand | Python Developer Portfolio</title>
+    <meta name="description" content="Personal portfolio of Parth Valand - Python Developer, Web Developer, Projects and Skills.">
     <link rel="stylesheet" href="style.css">
 
 
@@ -17,15 +19,12 @@
 </head>
 
 <body>
-    <div id="loader">
-   <div class="spinner"></div>
-</div>
    <div class="container">
     <nav id="header">
         <div class="nav-logo">
-           <p class="nav-name">Parth</p> 
-           <span>.</span>
-        </div>
+   <p class="nav-name">Parth</p> 
+   <span>.</span>
+</div>
         <div class="nav-menu" id="myNavMenu">
              <ul class="nav_menu_list">
                 <li class="nav_list">
@@ -48,13 +47,12 @@
 
         </div>
              <a href="Parth_Valand_CV.pdf" download class="btn">
-               Download CV <i class="fa-solid fa-file"></i>
-            </a>
-            <button id="theme-toggle" class="theme-btn"><i class="fa-solid fa-moon"></i>
-            </button>
-        <div class="nav-menu-btn">
-            <i class="fa-solid fa-bars" onclick="myMenuFunction()"></i>
-        </div>
+Download CV <i class="fa-solid fa-file"></i>
+</a>
+
+<button id="darkToggle" class="dark-btn">
+<i class="fa-solid fa-moon"></i>
+</button>
     </nav>
 
     <main class="wrapper"> 
@@ -69,7 +67,7 @@
                         <p>Welcome to my portfolio website. Here you can find my projects and skills.</p>
                     </div>
                     <div class="featured-text-btn">
-                        <button class="btn blue-btn">Hire me</button>
+                        <a href="#contact" class="btn blue-btn">Hire Me</a>
                         <a href="Parth_Valand_CV.pdf" download class="btn">
                          Download CV <i class="fa-solid fa-file"></i>
                         </a>
@@ -201,7 +199,7 @@
         </div>
 
         <div class="col">
-            <!--  FORM START -->
+            
             <form class="form-control" id="contactForm">
 
     <div class="form-inputs">
@@ -218,40 +216,23 @@
             Send Message <i class="fa-regular fa-paper-plane"></i>
         </button>
     </div>
-
+   <p id="formMessage" style="margin-top:10px;color:green;font-weight:500;"></p>
 </form>
-            <!--  FORM END -->
+            
         </div>
     </div>
 </section>
 </main>
 </div>
+<footer>
+<p>© 2026 Parth Valand | Python Developer</p>
+</footer>
     
 
    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
    <script src="https://unpkg.com/scrollreveal"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
    <script src="ph.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-<script>
-(function(){
-emailjs.init("hhEa9uBrETMRJVNlm");
-})();
-
-document.getElementById("contactForm").addEventListener("submit", function(event){
-event.preventDefault();
-
-emailjs.sendForm(
-'service_rcsf3i8',
-'template_udxcrov',
-this
-).then(function(){
-alert("Message Sent Successfully!");
-}, function(error){
-alert("Failed to send message");
-});
-});
-</script>
 
 </body>
 </html>
