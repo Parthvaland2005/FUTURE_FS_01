@@ -9,7 +9,7 @@
     <meta name="robots" content="index, follow">
     <title>Parth Valand | Python Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style.css">
+
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -51,6 +51,10 @@ Download CV <i class="fa-solid fa-file"></i>
 <button id="darkToggle" class="dark-btn">
 <i class="fa-solid fa-moon"></i>
 </button>
+
+<div class="nav-menu-btn">
+   <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+</div>
     </nav>
 
     <main class="wrapper"> 
@@ -83,12 +87,6 @@ Download CV <i class="fa-solid fa-file"></i>
                 <img src="profile.jpg" alt="Parth Valand Profile Photo">
               </div>
             </div>
-            <div class="scroll-icon-box">
-                <a href="#about" class="scroll-btn">
-                    <i class="fa-solid fa-arrow-down"></i>
-                    <p>Scroll Down</p>
-                </a>
-            </div>
         </section>
 <section class="section" id="about">
     <div class="top-header">
@@ -97,7 +95,6 @@ Download CV <i class="fa-solid fa-file"></i>
 
     <div class="row">
 
-        <!-- Left Column -->
         <div class="col">
             <div class="about-info">
                 <h3>My introduction</h3>
@@ -110,8 +107,7 @@ Download CV <i class="fa-solid fa-file"></i>
                  </a>
             </div>
         </div>
-
-        <!-- Right Column -->
+        
         <div class="col">
 
             <div class="skills-box">
@@ -159,16 +155,29 @@ Download CV <i class="fa-solid fa-file"></i>
      </div>
 
       <div class="project-container">
-        <div class="project-box">
-            <i class="fa-solid fa-briefcase"></i>
-               <h3>CrowdCount: Development of an Application to Count People based on Video Analytics</h3>
-                <label>Developed during my internship at Infosys, this project is a Python-based
-                    video analytics application that detects and counts people in real-time
-                    using computer vision techniques. The system processes video streams
-                    and provides accurate crowd analysis for security and monitoring purposes.
-                </label>
-        </div>
-      </div>
+
+    <div class="project-box">
+        <i class="fa-solid fa-users"></i>
+        <h3>Client Lead Management System (Mini CRM)</h3>
+        <label>
+            A Full Stack CRM web application built using React.js, Node.js, Express and MongoDB to manage client leads, track status, add notes and follow-ups with secure JWT authentication.
+        </label>
+        <br><br>
+        <a href="https://future-fs-02-mcnr.vercel.app" target="_blank" class="btn">Live Demo</a>
+
+    </div>
+
+    <div class="project-box">
+        <i class="fa-solid fa-scissors"></i>
+        <h3>Hair Salon Booking Website</h3>
+        <label>
+            A responsive web application for salon service booking with modern UI, service listing, and appointment management features built using HTML, CSS and JavaScript.
+        </label>
+        <br><br>
+        <a href=https://Parthvaland2005.github.io/FUTURE_FS_03/ target="_blank" class="btn">Live Demo</a>
+    </div>
+
+</div>
     </section>
    <section class="section" id="contact">
     <div class="top-header">

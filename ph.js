@@ -1,91 +1,105 @@
-function myMenuFunction() {
-    var menu = document.getElementById("myNavMenu");
-    menu.classList.toggle("responsive");
-}
+document.addEventListener("DOMContentLoaded", () => {
 
-window.onscroll = function () { headerShadow() };
-
-function headerShadow() {
-    const navHeader = document.getElementById("header");
-
-    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-
-        navHeader.style.boxShadow = "0 1px 6px rgba(0,0,0,0.1)";
-        navHeader.style.height = "70px";
-
-    } else {
-
-        navHeader.style.boxShadow = "none";
-        navHeader.style.height = "80px";
+    function toggleMenu() {
+        const menu = document.getElementById("myNavMenu");
+        menu.classList.toggle("responsive");
     }
-}
-const toggle = document.getElementById("darkToggle");
 
-toggle.addEventListener("click", () => {
-document.body.classList.toggle("dark-mode");
-});
+    window.toggleMenu = toggleMenu;
 
-ScrollReveal().reveal('.featured-text', { delay: 200 });
-ScrollReveal().reveal('.featured-image', { delay: 400 });
-ScrollReveal().reveal('.project-box', { interval: 200 });
-ScrollReveal().reveal('.skills-box', { interval: 200 });
-(function(){
-emailjs.init("hhEa9uBrETMRJVNlm");
-})();
+    window.addEventListener("scroll", () => {
+        headerShadow();
+        activeLink();
+    });
 
-const form = document.getElementById("contactForm");
-const message = document.getElementById("formMessage");
+    function headerShadow() {
+        const navHeader = document.getElementById("header");
 
-form.addEventListener("submit", function(e){
+        if (window.scrollY > 80) {
+            navHeader.style.boxShadow = "0 4px 20px rgba(0,0,0,0.08)";
+            navHeader.style.height = "70px";
+        } else {
+            navHeader.style.boxShadow = "none";
+            navHeader.style.height = "80px";
+        }
+    }
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
 
-e.preventDefault();
+    function activeLink() {
+        let current = "";
 
-emailjs.send("service_rcsf3i8","template_i49rpkq",{
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 150;
 
-name: this.name.value,
-email: this.email.value,
-message: this.message.value
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+        });
 
-})
-.then(function(){
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("active");
+            }
+        });
+    }
 
-message.innerHTML = "✅ Message sent successfully!";
-form.reset();
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            document.getElementById("myNavMenu").classList.remove("responsive");
+        });
+    });
 
-}, function(error){
+    const toggle = document.getElementById("darkToggle");
 
-message.innerHTML = "❌ Failed to send message.";
+    toggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
 
-});
+        if (document.body.classList.contains("dark-mode")) {
+            toggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        } else {
+            toggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        }
+    });
 
-});
+    if (typeof ScrollReveal !== "undefined") {
+        ScrollReveal({
+            distance: '60px',
+            duration: 1200,
+            delay: 200
+        });
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-link");
+        ScrollReveal().reveal('.featured-text', { origin: 'left' });
+        ScrollReveal().reveal('.featured-image', { origin: 'right' });
+        ScrollReveal().reveal('.project-box', { interval: 200 });
+        ScrollReveal().reveal('.skills-box', { interval: 200 });
+    }
 
-window.addEventListener("scroll", () => {
+    if (typeof emailjs !== "undefined") {
+        emailjs.init("hhEa9uBrETMRJVNlm");
+    }
 
-let current = "";
+    const form = document.getElementById("contactForm");
+    const message = document.getElementById("formMessage");
 
-sections.forEach((section) => {
+    if (form) {
+        form.addEventListener("submit", function(e){
+            e.preventDefault();
 
-const sectionTop = section.offsetTop;
-const sectionHeight = section.clientHeight;
-
-if(pageYOffset >= sectionTop - 200){
-current = section.getAttribute("id");
-}
-
-});
-
-navLinks.forEach((link) => {
-
-link.classList.remove("active");
-
-if(link.getAttribute("href") === "#" + current){
-link.classList.add("active");
-}
-
-});
+            emailjs.send("service_rcsf3i8","template_i49rpkq",{
+                name: this.name.value,
+                email: this.email.value,
+                message: this.message.value
+            })
+            .then(() => {
+                message.innerHTML = "✅ Message sent successfully!";
+                form.reset();
+            })
+            .catch(() => {
+                message.innerHTML = "❌ Failed to send message.";
+            });
+        });
+    }
 
 });
