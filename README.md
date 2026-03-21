@@ -24,9 +24,7 @@ It showcases my skills, projects, and contact details.
 
 ---
 
-## 📸 Preview
 
-![Portfolio Screenshot](screenshot)
 
 ---
 
