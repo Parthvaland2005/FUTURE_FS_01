@@ -1,14 +1,20 @@
 # 🌐 Parth Valand Portfolio
 
-This is my personal portfolio website built using **HTML, CSS, and JavaScript**.
+This is my personal portfolio website built using **HTML, CSS, and JavaScript**.  
+It showcases my skills, projects, and contact details.
+
+---
 
 ## 🚀 Features
-- Responsive portfolio design
-- About me section
-- Skills section
-- Projects showcase
-- Contact form using EmailJS
-- Resume download option
+- ✅ Responsive design (Mobile + Desktop)
+- 👨‍💻 About Me section
+- 🛠 Skills showcase
+- 📂 Projects section with Live Demo
+- 📩 Contact form using EmailJS
+- 📄 Resume download option
+- 🌙 Dark Mode toggle
+
+---
 
 ## 🛠 Tech Stack
 - HTML5
@@ -16,12 +22,22 @@ This is my personal portfolio website built using **HTML, CSS, and JavaScript**.
 - JavaScript
 - EmailJS
 
+---
+
 ## 📸 Preview
-![Portfolio Screenshot](screenshot.png)
+
+![Portfolio Screenshot](./screenshot.png)
+
+---
 
 ## 🔗 Live Website
-https://parthvaland2005.github.io/FUTURE_FS_01
+👉 https://parthvaland2005.github.io/FUTURE_FS_01
 
+---
 
+## 📂 Project Setup
 
-⭐ If you like this project, feel free to give it a star on GitHub!
+```bash
+git clone https://github.com/Parthvaland2005/FUTURE_FS_01.git
+cd FUTURE_FS_01
+open index.html
